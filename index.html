@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <title>Pomodoro Timer</title>
+ <link rel="stylesheet" href="style.css" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="container">
+  <h1>Pomodoro Timer</h1>
+
+  <div class="mode-buttons">
+    <button onclick="setMode('pomodoro')" id="btn-pomodoro" class="active">Pomodoro</button>
+    <button onclick="setMode('short')" id="btn-short">Short Break</button>
+    <button onclick="setMode('long')" id="btn-long">Long Break</button>
+  </div>
+
+  <label class="loop-toggle">
+    <input type="checkbox" id="loopMode" />
+    Loop otomatis
+  </label>
+
+  <div class="timer" id="timer"></div>
+
+  <div class="buttons">
+    <button onclick="startTimer()" id="btn-mulai">Mulai</button>
+    <button onclick="resetTimer()" id="btn-reset">Reset</button>
+  </div>
+
+  <div class="status" id="status">Siap mulai</div>
+  <div class="checkmarks" id="checkmarks"></div>
+
+  <div class="task-section">
+    <h2>Task List</h2>
+    <div class="task-input">
+      <input type="text" id="taskInput" placeholder="Tambahkan tugas..." />
+      <button onclick="addTask()">Tambah</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
