@@ -7,87 +7,29 @@
 
 
 ## Pendahuluan
-Di era digital saat ini manajemen waktu menjadi keterampilan yang sangat penting untuk menunjang produktivitas terutama bagi pelajar, mahasiswa, dan pekerja profesional. Berbagai penelitian menunjukkan bahwa teknik Pomodoro dapat membantu meningkatkan manajemen waktu dan mengurangi prokrastinasi terutama saat menghadapi tugas-tugas besar yang menantang. Dengan memecah pekerjaan menjadi bagian-bagian kecil dan diselingi istirahat seseorang dapat lebih fokus dan memiliki rasa pencapaian yang lebih cepat terhadap progres kerja mereka <a href="#div_ref3">(Cirillo, 2006)</a>. Oleh karena itu, penerapan teknik ini dalam bentuk aplikasi digital seperti Pomodoro Timer sangat relevan untuk mendukung produktivitas di era modern.
+Di era digital saat ini manajemen waktu menjadi keterampilan yang sangat penting untuk menunjang produktivitas terutama bagi pelajar, mahasiswa, dan pekerja profesional. Berbagai penelitian menunjukkan bahwa teknik Pomodoro dapat membantu meningkatkan manajemen waktu dan mengurangi prokrastinasi terutama saat menghadapi tugas-tugas besar yang menantang. Dengan memecah pekerjaan menjadi bagian-bagian kecil dan diselingi istirahat seseorang dapat lebih fokus dan memiliki rasa pencapaian yang lebih cepat terhadap progres kerja mereka. Oleh karena itu, penerapan teknik ini dalam bentuk aplikasi digital seperti Pomodoro Timer sangat relevan untuk mendukung produktivitas di era modern.
 
 Dengan latar belakang tersebut kami mengembangkan sebuah aplikasi Pomodoro Timer berbasis web menggunakan HTML, CSS, dan JavaScript. Tujuan kami membuat pomodoro timer ini adalah membuat alat bantu produktivitas yang mudah digunakan, menarik secara visual dan dapat digunakan secara offline tanpa perlu koneksi internet.
 
+Selain itu, proyek pembuatan aplikasi Pomodoro Timer ini bertujuan sebagai solusi praktis untuk membantu pengguna mengelola waktu secara mandiri dalam berbagai aktivitas, seperti belajar, bekerja, atau menyelesaikan proyek pribadi. Aplikasi ini dirancang agar pengguna dapat fokus pada satu tugas dalam durasi tertentu tanpa gangguan, dengan jeda istirahat yang terjadwal secara otomatis. Fungsi utama dari Pomodoro Timer ini adalah sebagai pengatur siklus kerja dan istirahat, sehingga dapat meningkatkan konsentrasi, mengurangi kelelahan mental, dan membantu pengguna membentuk kebiasaan kerja yang lebih terstruktur. Dengan pendekatan ini, diharapkan pengguna bisa lebih produktif dan efisien dalam menjalani rutinitas harian, terutama di tengah distraksi yang tinggi di era digital.
 
 ## Tinjauan Pustaka
-Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dalam bentuk aplikasi desktop, mobile, maupun berbasis web. Kami mengambil referensi dari :
+Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dalam bentuk aplikasi desktop, mobile, maupun berbasis web. Kami mengambil referensi dari beberapa web berikut :
 
-- https://www.tomatotimers.com/
+- **TomatoTimers** merupakan  merupakan situs web yang menyediakan aplikasi Pomodoro Timer sederhana dan fungsional yang dapat digunakan langsung melalui browser tanpa perlu instalasi. Website ini dirancang dengan antarmuka yang minimalis dan intuitif, memungkinkan pengguna untuk memilih tiga mode utama, yaitu Pomodoro, Short Break, dan Long Break. TomatoTimers sangat membantu dalam mendukung metode manajemen waktu berbasis teknik Pomodoro, karena memungkinkan pengguna fokus bekerja dalam durasi tertentu diselingi waktu istirahat yang terstruktur. Dapat diakses melalui link : https://www.tomatotimers.com/ 
+- **Flocus** merupakan situs web produktivitas berbasis personal dashboard yang dirancang untuk membantu pengguna memulai hari dengan lebih fokus dan terorganisir. Flocus menampilkan halaman pembuka yang dapat dikustomisasi dengan to-do list, kutipan motivasi, widget cuaca, serta background gambar yang menenangkan. Tujuan utama dari Flocus adalah menciptakan suasana kerja yang positif dan memotivasi pengguna sejak awal mereka membuka browser, sehingga membantu mengurangi distraksi dan meningkatkan kesadaran terhadap prioritas harian. Dapat diakses melalui link : https://flocus.com/
+- **StudyWithMe** merupakan aplikasi web berbasis Pomodoro yang dirancang dengan antarmuka aesthetic guna meningkatkan fokus dan produktivitas. Pengguna dapat memilih dari berbagai tema visual seperti “Cozy Fireplace”, “Tokyo Sakura”, dan “Seoul Sunrise” untuk menciptakan atmosfer belajar yang menyenangkan dan personal. Secara keseluruhan, StudyWithMe.io menggabungkan estetika visual dan audio yang menyenangkan dengan teknik manajemen waktu Pomodoro, menyediakan ruang digital yang dapat disesuaikan untuk belajar atau bekerja dengan lebih fokus dan bersemangat. Dapat diakses melalui link : https://studywithme.io/
 
-
-Sebagai referensi kami untuk membuat web ini.
 
 ## Metode Pembuatan
-## Perencanaan dan desain fitur program
-Dalam proses pembuatan program kami merancang alur kerja dan fitur utama untuk mendukung aplikasi kami diantaranya :
-- Pemilihan menu : Pomodoro, Short Break, dan Long Break.
-- Timer yang dapat dijalankan dan direset.
-- Menambahkan fitur loop untuk melakukan perulangan otomatis antar sesi.
-- Fitur task list berfungsi sebagai tempat untuk menambah tugas.
-## Struktur dan Logika Program 
-Pada proses pembuatan program  ini kami menggunakan bahasa pemrograman JavaScript dimana dalam :
-- Pengaturan Waktu
-```js
-const durations = {
-  pomodoro: 25 * 60,
-  short: 5 * 60,
-  long: 15 * 60,
-};
-```
-kami membuat variabel durations untuk menyimpan masing-masing mode dengan nilai yang telah ditentukan, lalu waktu tersebut akan berjalan secara mundur saat timer dijalankan.
-- Timer Updating
-```js
-function updateTimerDisplay() {
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
-  timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-}
-```
-pada baris tersebut berfungsi untuk mengubah **`timeLeft`** dari detik ke `menit : detik` dan memperbarui tampilan program.
-- Mengatur mode timer
-```js
-function setMode(newMode) {
-  mode = newMode;
-  clearInterval(timerInterval); // hentikan timer yang berjalan
-  timeLeft = durations[mode];   // atur waktu sesuai mode
-  updateTimerDisplay();
-
-  // Update tampilan tombol mode aktif
-  document.querySelectorAll(".mode-buttons button").forEach(btn => btn.classList.remove("active"));
-  document.getElementById(`btn-${mode}`).classList.add("active");
-
-  // Update teks status
-  if (mode === "pomodoro") {
-    statusDisplay.textContent = "Waktu kerja";
-  } else if (mode === "short") {
-    statusDisplay.textContent = "Istirahat pendek";
-  } else {
-    statusDisplay.textContent = "Istirahat panjang";
-  }
-}
-```
-pada baris kode tersebut berfungsi untuk mengatur mode timer, mengatur waktu sesuai mode, dan memperbarui tampilan tombol dalam program.
-- Reset timer
-```js
-function resetTimer() {
-  clearInterval(timerInterval);
-  reps = 0;
-  checkmarksDisplay.textContent = "";
-  setMode("pomodoro");
-}
-```
-Pada baris kode tersebut berfungsi untuk mengembalikan timer ke keadaan awal, menghapus tanda centang, dan mengatur mode ke Pomodoro.
-- 
+Dalam proses pembuatan web pomodoro ini kami terlebih dahulu menentukan fitur-fitur yang akan disediakan dalam program 
 
 ## Hasil Program
 Sertakan gambar, diagram, atau link videos.
 Sertakan ulasan selama proses pembuatan. Misal ada tidaknya
 fitur yang bisa diselesaikan di dalam program.
 
-Tutorial penggunaan program dapat dilihat melalui vidio berikut :
+Tutorial penggunaan program dapat dilihat melalui video berikut :
 
 <video width="720" height="300" controls autoplay>
   <source src="Tutorial.mp4" type="video/mp4">
