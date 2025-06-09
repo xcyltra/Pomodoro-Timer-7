@@ -14,7 +14,7 @@ Dengan latar belakang tersebut kami mengembangkan sebuah aplikasi Pomodoro Timer
 Selain itu, proyek pembuatan aplikasi Pomodoro Timer ini bertujuan sebagai solusi praktis untuk membantu pengguna mengelola waktu secara mandiri dalam berbagai aktivitas, seperti belajar, bekerja, atau menyelesaikan proyek pribadi. Aplikasi ini dirancang agar pengguna dapat fokus pada satu tugas dalam durasi tertentu tanpa gangguan, dengan jeda istirahat yang terjadwal secara otomatis. Fungsi utama dari Pomodoro Timer ini adalah sebagai pengatur siklus kerja dan istirahat, sehingga dapat meningkatkan konsentrasi, mengurangi kelelahan mental, dan membantu pengguna membentuk kebiasaan kerja yang lebih terstruktur. Dengan pendekatan ini, diharapkan pengguna bisa lebih produktif dan efisien dalam menjalani rutinitas harian, terutama di tengah distraksi yang tinggi di era digital.
 
 ## Tinjauan Pustaka
-Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dalam bentuk aplikasi desktop, mobile, maupun berbasis web. Kami mengambil referensi dari beberapa web berikut :
+Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dalam bentuk aplikasi desktop, mobile, maupun berbasis web. Untuk mengembangkan program pomodoro ini kami mengambil referensi dari beberapa web berikut :
 
 - **TomatoTimers** merupakan  merupakan situs web yang menyediakan aplikasi Pomodoro Timer sederhana dan fungsional yang dapat digunakan langsung melalui browser tanpa perlu instalasi. Website ini dirancang dengan antarmuka yang minimalis dan intuitif, memungkinkan pengguna untuk memilih tiga mode utama, yaitu Pomodoro, Short Break, dan Long Break. TomatoTimers sangat membantu dalam mendukung metode manajemen waktu berbasis teknik Pomodoro, karena memungkinkan pengguna fokus bekerja dalam durasi tertentu diselingi waktu istirahat yang terstruktur. Dapat diakses melalui link : https://www.tomatotimers.com/ 
 - **Flocus** merupakan situs web produktivitas berbasis personal dashboard yang dirancang untuk membantu pengguna memulai hari dengan lebih fokus dan terorganisir. Flocus menampilkan halaman pembuka yang dapat dikustomisasi dengan to-do list, kutipan motivasi, widget cuaca, serta background gambar yang menenangkan. Tujuan utama dari Flocus adalah menciptakan suasana kerja yang positif dan memotivasi pengguna sejak awal mereka membuka browser, sehingga membantu mengurangi distraksi dan meningkatkan kesadaran terhadap prioritas harian. Dapat diakses melalui link : https://flocus.com/
@@ -22,7 +22,8 @@ Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dala
 
 
 ## Metode Pembuatan
-Dalam proses pembuatan web pomodoro ini kami terlebih dahulu menentukan fitur-fitur yang akan disediakan dalam program 
+Dalam proses pembuatan web pomodoro ini kami terlebih dahulu menentukan fitur-fitur yang akan disediakan dalam program berupa fitur task list yang berfungsi sebagai tempat untuk menambah daftar tugas lalu menu `Pomodoro, Short Break, dan Long Break` selain itu juga terdapat timer yang dapat dijalankan dan direset.
+
 
 ## Hasil Program
 Sertakan gambar, diagram, atau link videos.
