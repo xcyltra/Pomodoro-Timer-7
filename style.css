@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
   margin: 0;
 
   width: 100%;
@@ -17,15 +17,22 @@ h1 {
   color: darkred;
   margin-bottom: 20px;
 }
+
 .container {
   background: #fff;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   max-width: 500px;
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
+
+.container-wrapper {
+  transform: scale(0.7); 
+  transform-origin: top center;
+}
+
 .task-section {
   margin-top: 30px;
   text-align: left;
@@ -63,6 +70,14 @@ h1 {
   background: #f0f0f0;
   margin-bottom: 6px;
   border-radius: 6px;
+}
+
+.task-list-container {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-top: 10px;
 }
 .mode-buttons {
   display: flex;
