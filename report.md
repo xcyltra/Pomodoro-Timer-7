@@ -22,43 +22,63 @@ Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dala
 
 
 ## Metode Pembuatan
-Dalam proses pembuatan web pomodoro ini kami terlebih dahulu menentukan fitur-fitur yang akan disediakan dalam program berupa fitur task list yang berfungsi sebagai tempat untuk menambah daftar tugas lalu menu `Pomodoro, Short Break, dan Long Break` selain itu juga terdapat timer yang dapat dijalankan dan direset.
+Dalam proses pengembangan web Pomodoro ini langkah pertama yang kami lakukan adalah menetapkan fitur-fitur yang akan disediakan dalam program. Fitur-fitur tersebut meliputi task list yang berfungsi sebagai wadah untuk menambahkan daftar tugas, serta menu Pomodoro, Short Break, dan Long Break. Selain itu web kami ini juga dilengkapi dengan fitur timer yang dapat dijalankan dan dapat direset. Dalam program ini kami menggunakan :
+- Callback functions
+```js
+setInterval(callback, 1000): 
+clearInterval(timerInterval):
+```
+dimana pada kode `setInterval(callback, 1000)` baris tersebut berfungsi untuk menjalankan fungsi callback untuk setiap 1000 milisecond dimana program akan menjalankan hitungan mundur timer,selanjutnya pada kode `clearInterval(timerInterval)` baris tersebut berfungsi untuk menghentikan timer yang sedang berjalan.
+- String and Math Utilities
+```js
+Math.floor(timeLeft / 60)
+String(...).padStart(2, '0')
+```
+pada baris kode `Math.floor(timeLeft / 60)` baris tersebut memiliki fungsi untuk mengubah detik menjadi menit,sedangkan pada baris kode `String(...).padStart(2, '0')` berfungsi untuk menambahkan 1 digit angka 0 didepan jika angka yang muncul < 10 agar timer tetap dapat menampilkan 2 angka didepan ":"
+
 
 
 ## Hasil Program
-Sertakan gambar, diagram, atau link videos.
-Sertakan ulasan selama proses pembuatan. Misal ada tidaknya
-fitur yang bisa diselesaikan di dalam program.
+Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan melalui `timer dinamis` berupa menu _pomodoro, short break, dan long break_ dimana dalam ketiga fitur ini menampilkan timer secara real time dengan format menit:detik dan disediakan fitur reset untuk mengembalikan waktu ke mode awal program. Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. Diagram alir(flowchart) untuk program ini adalah sebagai berikut :
+<img src="flowchart.png" > 
 
 Tutorial penggunaan program dapat dilihat melalui video berikut :
 
-<video width="720" height="300" controls autoplay>
+<video width="700" height="400" controls autoplay muted>
   <source src="Tutorial.mp4" type="video/mp4">
 </video>
-
 
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
 - Membagi jobdesk anggota tim
 - Mengimplementasikan logika waktu dengan JavaScript
-- Mengidentifikasi fitur-fitur yang cocok untuk digunakan
+- Mengidentifikasi fitur-fitur yang cocok untuk digunakan dalam program
 #### Kekurangan yang masih dialami dalam program ini diantaranya :
 - Belum terdapat notifikasi bila waktu habis
-- Belum terdapat history sesi hasil kerja
+- Belum terdapat history sesi penggunaan program
 - Belum terdapat menu yang berisi deskripsi terkait program
 - Belum terdapat menu untuk menambahkan/mengubah tema
+- Belum terdapat fitur custom timer dan belum dapat menyimpan progress task list
 #### Kelebihan dari program yang telah kami buat diantaranya :
 - Dapat digunakan secara offline
 - Mendukung mode kerja berulang (loop otomatis)
-- 
+- Desain antarmuka yang sederhana namun fungsional
 #### Rencana kami jika program dilanjutkan adalah :
 - Menambahkan notifikasi jika waktu habis
 - Menambahkan fitur history hasil kerja
 - Menambahkan menu deskripsi terkait program
-- Menambahkan menu untuk mengubah/menambahkan tema
-- 
+- Menambahkan menu untuk mengubah/menambahkan tema serta nada dering
 
 ## Daftar pustaka
 - <div id="div_ref1"> 
+  https://www.tomatotimers.com/. Diakses pada 23 mei 2025.
+  </div>
+- <div id="div_ref1"> 
     https://en.wikipedia.org/wiki/Pomodoro_Technique. Diakses pada 7 Juni 2025.
+  </div>
+- <div id="div_ref2">
+  https://flocus.com/. Diakses pada 7 Juni 2025.
+  </div>
+- <div id="div_ref2">
+  https://studywithme.io/. Diakses pada 9 Juni 2025.
   </div>
