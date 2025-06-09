@@ -6,6 +6,7 @@ const durations = {
 
 let mode = 'pomodoro';
 let reps = 0;
+let isPaused = false;
 let timeLeft = durations[mode];
 let timerInterval = null;
 
@@ -39,17 +40,22 @@ function setMode(newMode) {
   }
 }
 
-function startTimer() {
-  clearInterval(timerInterval);
+function setButtonState(activeId) {
+  const buttons = ["btn-mulai", "btn-pause", "btn-reset"];
+  buttons.forEach(id => {
+    const btn = document.getElementById(id);
+    if (id === activeId) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+}
 
-  if (mode === "pomodoro") {
-    reps++;
-    statusDisplay.textContent = "Waktu kerja";
-  } else if (mode === "short") {
-    statusDisplay.textContent = "Istirahat pendek";
-  } else {
-    statusDisplay.textContent = "Istirahat panjang";
-  }
+function startTimer() {
+  if (timerInterval) return; // jangan dobel interval
+
+  setButtonState("btn-pause"); // tombol pause akan aktif saat timer jalan
 
   timerInterval = setInterval(() => {
     timeLeft--;
@@ -57,32 +63,43 @@ function startTimer() {
 
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
+      timerInterval = null;
 
-      if (mode === "pomodoro") {
-        checkmarksDisplay.textContent += "✔";
-      }
+      if (mode === "pomodoro") checkmarksDisplay.textContent += "✔";
 
       if (loopCheckbox.checked) {
-        // Ganti mode otomatis
-        if (mode === "pomodoro") {
-          mode = reps % 8 === 0 ? "long" : "short";
-        } else {
-          mode = "pomodoro";
-        }
+        mode = (mode === "pomodoro") ? (reps % 8 === 0 ? "long" : "short") : "pomodoro";
         setMode(mode);
         startTimer();
       } else {
         statusDisplay.textContent = "Selesai!";
+        setButtonState("btn-reset");
       }
     }
   }, 1000);
 }
 
+function pauseTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    statusDisplay.textContent = "Ditunda...";
+    setButtonState("btn-pause");
+  } else {
+    startTimer(); // lanjutkan
+  }
+}
+
+
 function resetTimer() {
   clearInterval(timerInterval);
+  timerInterval = null;
+  isPaused = false;
   reps = 0;
   checkmarksDisplay.textContent = "";
   setMode("pomodoro");
+  setButtonState("btn-mulai");
+  document.getElementById("btn-pause").textContent = "Pause";
 }
 
 setMode("pomodoro"); // inisialisasi awal

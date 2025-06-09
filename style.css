@@ -111,6 +111,14 @@ h1 {
 .buttons {
   margin: 10px;
 }
+
+.buttons button.active {
+  background-color: darkred;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
 button {
   padding: 10px 20px;
   margin: 0 10px;
@@ -159,6 +167,12 @@ button:hover {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
+
+#btn-pause {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
 #btn-reset{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
