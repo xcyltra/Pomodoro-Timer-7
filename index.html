@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-wrapper">
+  <div class="container">
   <h1>Pomodoro Timer</h1>
 
   <div class="mode-buttons">
@@ -37,16 +38,19 @@
   <div class="checkmarks" id="checkmarks"></div>
 
   <div class="task-section">
-    <h2>Task List</h2>
-    <div class="task-input">
-      <input type="text" id="taskInput" placeholder="Tambahkan tugas..." />
-      <button onclick="addTask()">Tambah</button>
-    </div>
+  <h2>Task List</h2>
+  <div class="task-input">
+    <input type="text" id="taskInput" placeholder="Tambahkan tugas..." />
+    <button onclick="addTask()">Tambah</button>
+  </div>
+
+  <div class="task-list-container">
     <ul id="taskList"></ul>
+  </div>
   </div>
 </div>
 
 
   <script src="script.js"></script>
 </body>
-</html>
+</html> 
