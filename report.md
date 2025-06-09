@@ -16,22 +16,83 @@ Dengan latar belakang tersebut kami mengembangkan sebuah aplikasi Pomodoro Timer
 Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dalam bentuk aplikasi desktop, mobile, maupun berbasis web. Kami mengambil referensi dari :
 
 - https://www.tomatotimers.com/
-- https://en.wikipedia.org/wiki/Pomodoro_Technique
+
 
 Sebagai referensi kami untuk membuat web ini.
 
 ## Metode Pembuatan
-Ceritakan bagaimana cara menyusun program tersebut.
-Ceritakan juga _tools_ dan _library_ yang digunakan.
-Tambahkan _flowchart_.
+## Perencanaan dan desain fitur program
+Dalam proses pembuatan program kami merancang alur kerja dan fitur utama untuk mendukung aplikasi kami diantaranya :
+- Pemilihan menu : Pomodoro, Short Break, dan Long Break.
+- Timer yang dapat dijalankan dan direset.
+- Menambahkan fitur loop untuk melakukan perulangan otomatis antar sesi.
+- Fitur task list berfungsi sebagai tempat untuk menambah tugas.
+## Struktur dan Logika Program 
+Pada proses pembuatan program  ini kami menggunakan bahasa pemrograman JavaScript dimana dalam :
+- Pengaturan Waktu
+```js
+const durations = {
+  pomodoro: 25 * 60,
+  short: 5 * 60,
+  long: 15 * 60,
+};
+```
+kami membuat variabel durations untuk menyimpan masing-masing mode dengan nilai yang telah ditentukan, lalu waktu tersebut akan berjalan secara mundur saat timer dijalankan.
+- Timer Updating
+```js
+function updateTimerDisplay() {
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = timeLeft % 60;
+  timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+```
+pada baris tersebut berfungsi untuk mengubah **`timeLeft`** dari detik ke `menit : detik` dan memperbarui tampilan program.
+- Mengatur mode timer
+```js
+function setMode(newMode) {
+  mode = newMode;
+  clearInterval(timerInterval); // hentikan timer yang berjalan
+  timeLeft = durations[mode];   // atur waktu sesuai mode
+  updateTimerDisplay();
+
+  // Update tampilan tombol mode aktif
+  document.querySelectorAll(".mode-buttons button").forEach(btn => btn.classList.remove("active"));
+  document.getElementById(`btn-${mode}`).classList.add("active");
+
+  // Update teks status
+  if (mode === "pomodoro") {
+    statusDisplay.textContent = "Waktu kerja";
+  } else if (mode === "short") {
+    statusDisplay.textContent = "Istirahat pendek";
+  } else {
+    statusDisplay.textContent = "Istirahat panjang";
+  }
+}
+```
+pada baris kode tersebut berfungsi untuk mengatur mode timer, mengatur waktu sesuai mode, dan memperbarui tampilan tombol dalam program.
+- Reset timer
+```js
+function resetTimer() {
+  clearInterval(timerInterval);
+  reps = 0;
+  checkmarksDisplay.textContent = "";
+  setMode("pomodoro");
+}
+```
+Pada baris kode tersebut berfungsi untuk mengembalikan timer ke keadaan awal, menghapus tanda centang, dan mengatur mode ke Pomodoro.
+- 
 
 ## Hasil Program
 Sertakan gambar, diagram, atau link videos.
 Sertakan ulasan selama proses pembuatan. Misal ada tidaknya
 fitur yang bisa diselesaikan di dalam program.
 
-Dapat juga menyertakan tautan video demonstrasi penggunaan atau peng-operasian
-program yang kalian buat.
+Tutorial penggunaan program dapat dilihat melalui vidio berikut :
+
+<video width="720" height="300" controls autoplay>
+  <source src="Tutorial.mp4" type="video/mp4">
+</video>
+
 
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
