@@ -201,7 +201,7 @@ Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk me
 
 ## Daftar pustaka
 - https://www.tomatoTimers.com. Diakses pada 23 Mei 2025.
+- https://youtu.be/sVSAklXy1uE?si=Uhb9vOdr96oFsr2g Diakses pada 28 Mei 2025
 - https://en.wikipedia.org/wiki/Pomodoro_Technique. Diakses pada 7 Juni 2025.
 - https://flocus.com. Diakses pada 7 Juni 2025.
 - https://studywithme.io. Diakses pada 9 Juni 2025.
-- https://youtu.be/sVSAklXy1uE?si=Uhb9vOdr96oFsr2g Diakses pada 28 Mei 2025
