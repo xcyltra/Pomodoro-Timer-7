@@ -163,20 +163,20 @@ Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan
 Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. 
 
 ### Diagram alir untuk program ini adalah sebagai berikut :
-<img src="flowchart.png" height="250"> 
+<img src="img-resources/flowchart.png" height="250"> 
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
 #### 1) Tampilan Menu Pomodoro
-<img src="pomodoro.png" width="700" height="400">
+<img src="img-resources/pomodoro.png" width="700" height="400">
 
 #### 2) Tampilan Menu Short Break
-<img src="short_break.png" width="700" height="400">
+<img src="img-resources/short_break.png" width="700" height="400">
 
 #### 3) Tampilan Menu Long Break
-<img src="long_break.png" width="700" height="400">
+<img src="img-resources/long_break.png" width="700" height="400">
 
 #### 4) Tampilan Task List
-<img src="task_list.png" width="700" height="400">
+<img src="img-resources/task_list.png" width="700" height="400">
 
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
