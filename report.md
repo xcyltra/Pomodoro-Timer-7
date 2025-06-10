@@ -22,31 +22,161 @@ Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dala
 
 
 ## Metode Pembuatan
-Dalam proses pengembangan web Pomodoro ini langkah pertama yang kami lakukan adalah menetapkan fitur-fitur yang akan disediakan dalam program. Fitur-fitur tersebut meliputi task list yang berfungsi sebagai wadah untuk menambahkan daftar tugas, serta menu Pomodoro, Short Break, dan Long Break. Selain itu web kami ini juga dilengkapi dengan fitur timer yang dapat dijalankan dan dapat direset. Dalam program ini kami menggunakan :
-- Callback functions
-```js
-setInterval(callback, 1000): 
-clearInterval(timerInterval):
-```
-dimana pada kode `setInterval(callback, 1000)` baris tersebut berfungsi untuk menjalankan fungsi callback untuk setiap 1000 milisecond dimana program akan menjalankan hitungan mundur timer,selanjutnya pada kode `clearInterval(timerInterval)` baris tersebut berfungsi untuk menghentikan timer yang sedang berjalan.
-- String and Math Utilities
-```js
-Math.floor(timeLeft / 60)
-String(...).padStart(2, '0')
-```
-pada baris kode `Math.floor(timeLeft / 60)` baris tersebut memiliki fungsi untuk mengubah detik menjadi menit,sedangkan pada baris kode `String(...).padStart(2, '0')` berfungsi untuk menambahkan 1 digit angka 0 didepan jika angka yang muncul < 10 agar timer tetap dapat menampilkan 2 angka didepan ":"
+Dalam program ini kami menggunakan bahasa pemrograman JavaScript untuk membuat logika utama dari timer Pomodoro. Kami juga menggunakan HTML sebagai kerangka struktur halaman dan CSS untuk memperindah tampilan antarmuka pengguna agar lebih menarik dan mudah digunakan.Selama untuk mengembangkan web Pomodoro ini langkah pertama yang kami lakukan adalah menetapkan fitur-fitur yang akan disediakan dalam program berupa :
+- Timer Pomodoro dengan tiga mode Pomodoro (25 menit), Short Break (5 menit), dan Long Break (15 menit).
+- Tombol Mulai, Pause, dan Reset berfungsi untuk mengelola alur waktu.
+- Checkmarks otomatis yang menampilkan tanda centang setelah sesi kerja selesai.
+- Task list berfungsi untuk mencatat dan memantau tugas yang ingin diselesaikan pengguna.
+- Mode loop yang memungkinkan pengulangan otomatis antara kerja dan istirahat.\
+### Penjelasan terkait kode JavaScript yang digunakan dalam program :
+1. Menentukan waktu untuk setiap mode
 
+```js
+const durations = {
+  pomodoro: 25 * 60,
+  short: 5 * 60,
+  long: 15 * 60,
+};
+```
+pada baris `const durations` berfungsi untuk mendefinisikan masing-masing mode (Pomodoro, Short Break, dan Long Break) dalam satuan detik.
+
+2. Mengatur mode dan status tampilan
+
+```js
+function setMode(newMode) {
+  mode = newMode;
+  clearInterval(timerInterval);
+  timeLeft = durations[mode];
+  updateTimerDisplay();
+
+  document.querySelectorAll(".mode-buttons button").forEach(btn => btn.classList.remove("active"));
+  document.getElementById(`btn-${mode}`).classList.add("active");
+
+  if (mode === "pomodoro") {
+    statusDisplay.textContent = "Waktu kerja";
+  } else if (mode === "short") {
+    statusDisplay.textContent = "Istirahat pendek";
+  } else {
+    statusDisplay.textContent = "Istirahat panjang";
+  }
+}
+```
+pada baris `setMode()` berfungsi untuk mengganti mode timer dan memperbarui status di layar,dengan fungsi ini pengguna dapat berpindah mode kapan saja dan dapat melihat status kerja yang sedang berlangsung.
+
+3. Timer interaktif
+
+```js
+function startTimer() {
+  if (timerInterval) return;
+
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    updateTimerDisplay();
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+
+      if (mode === "pomodoro") checkmarksDisplay.textContent += "✔";
+
+      if (loopCheckbox.checked) {
+        mode = (mode === "pomodoro") ? (reps % 8 === 0 ? "long" : "short") : "pomodoro";
+        setMode(mode);
+        startTimer();
+      } else {
+        statusDisplay.textContent = "Selesai!";
+        setButtonState("btn-reset");
+      }
+    }
+  }, 1000);
+}
+```
+pada bagian ini timer akan otomatis berpindah ke mode selanjutnya jika opsi `loop otomatis` diaktifkan.
+
+4. Reset dan pause timer
+
+```js
+function pauseTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    statusDisplay.textContent = "Ditunda...";
+  } else {
+    startTimer(); // lanjutkan
+  }
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  isPaused = false;
+  reps = 0;
+  checkmarksDisplay.textContent = "";
+  setMode("pomodoro");
+}
+```
+pada bagian ini kami menambahkan menu berupa `pause` dan `reset` untuk menghentikan sementara dan mengulang timer dengan fleksibel.
+
+5. Fitur task list
+
+```js
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const taskText = input.value.trim();
+  if (taskText === "") return;
+
+  const li = document.createElement("li");
+
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      span.classList.add("completed");
+    } else {
+      span.classList.remove("completed");
+    }
+  });
+
+  const span = document.createElement("span");
+  span.textContent = taskText;
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "❌";
+  deleteBtn.addEventListener("click", () => {
+    li.remove();
+  });
+
+  li.appendChild(checkbox);
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
+  document.getElementById("taskList").appendChild(li);
+
+  input.value = "";
+}
+```
+pada bagian ini kami menambahkan task list dengan tujuan untuk memudahkan pengguna jika ingin menuliskan tugas yang ingin mereka selesaikan selama sesi pomodoro, jika tugas telah selesai dapat diberi tanda centang atau dihapus dari list sesuai dengan kebutuhan pengguna.
 
 
 ## Hasil Program
-Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan melalui `timer dinamis` berupa menu _pomodoro, short break, dan long break_ dimana dalam ketiga fitur ini menampilkan timer secara real time dengan format menit:detik dan disediakan fitur reset untuk mengembalikan waktu ke mode awal program. Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. Diagram alir(flowchart) untuk program ini adalah sebagai berikut :
-<img src="flowchart.png" > 
+Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan melalui `timer dinamis` berupa menu _pomodoro, short break, dan long break_ dimana dalam ketiga fitur ini menampilkan timer secara real time dengan format menit:detik dan disediakan fitur reset untuk mengembalikan waktu ke mode awal program. 
 
-Tutorial penggunaan program dapat dilihat melalui video berikut :
+Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. 
 
-<video width="700" height="400" controls autoplay muted>
-  <source src="Tutorial.mp4" type="video/mp4">
-</video>
+### Diagram alir untuk program ini adalah sebagai berikut :
+<img src="flowchart.png" height="250"> 
+
+### Tampilan saat program dijalankan adalah sebagai berikut :
+#### 1) Tampilan Menu Pomodoro
+<img src="pomodoro.png" width="700" height="400">
+
+#### 2) Tampilan Menu Short Break
+<img src="short_break.png" width="700" height="400">
+
+#### 3) Tampilan Menu Long Break
+<img src="long_break.png" width="700" height="400">
+
+#### 4) Tampilan Task List
+<img src="task_list.png" width="700" height="400">
 
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
@@ -70,15 +200,7 @@ Tutorial penggunaan program dapat dilihat melalui video berikut :
 - Menambahkan menu untuk mengubah/menambahkan tema serta nada dering
 
 ## Daftar pustaka
-- <div id="div_ref1"> 
-  https://www.tomatotimers.com/. Diakses pada 23 mei 2025.
-  </div>
-- <div id="div_ref1"> 
-    https://en.wikipedia.org/wiki/Pomodoro_Technique. Diakses pada 7 Juni 2025.
-  </div>
-- <div id="div_ref2">
-  https://flocus.com/. Diakses pada 7 Juni 2025.
-  </div>
-- <div id="div_ref2">
-  https://studywithme.io/. Diakses pada 9 Juni 2025.
-  </div>
+- https://www.tomatoTimers.com. Diakses pada 23 Mei 2025.
+- https://en.wikipedia.org/wiki/Pomodoro_Technique. Diakses pada 7 Juni 2025.
+- https://flocus.com. Diakses pada 7 Juni 2025.
+- https://studywithme.io. Diakses pada 9 Juni 2025.
