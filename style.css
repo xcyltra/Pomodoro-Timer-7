@@ -1,5 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@ body {
 
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url(img-resources/Background.jpg);
+  background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0)),url(img-resources/Background.jpg);
   background-size: cover;
   background-image: center;
 }
@@ -22,14 +22,17 @@ h1 {
   background: #fff;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   max-width: 500px;
   width: 100%;
   text-align: center;
 }
 
 .container-wrapper {
-  transform: scale(0.s);
+  display: flex;               
+  flex-direction: column;      
+  align-items: center;
+  transform: scale(0.7); 
   transform-origin: top center;
 }
 
@@ -53,10 +56,10 @@ h1 {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .task-input button {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 #taskList {
   list-style: none;
@@ -92,7 +95,7 @@ h1 {
   border-radius: 6px;
   cursor: pointer;
   background-color: rgb(29, 24, 24);
-  color: #fee8e7ff;
+  color: #FEE8E7ff;
   transition: background-color 0.3s;
 }
 .mode-buttons button.active {
@@ -111,13 +114,6 @@ h1 {
 .buttons {
   margin: 10px;
 }
-
-.buttons button.active {
-  background-color: darkred;
-  color: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
 button {
   padding: 10px 20px;
   margin: 0 10px;
@@ -130,7 +126,7 @@ button {
   transition: background-color 0.3s ease;
 }
 button:hover {
-  background-color: black;
+  background-color: darkred;
 }
 .status {
   font-size: 1.2rem;
@@ -139,44 +135,78 @@ button:hover {
 }
 .checkmarks {
   font-size: 1.5rem;
-  color: #4caf50;
+  color: #4CAF50;
   margin-top: 10px;
 }
-#timer {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+#timer{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
-#btn-pomodoro {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+#btn-pomodoro{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
-#btn-short {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+#btn-short{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
-#btn-long {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+#btn-long{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
-#status {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+#status{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
-#btn-mulai {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
+#btn-mulai{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
-
-#btn-pause {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-}
-
-#btn-reset {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
+#btn-reset{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 .completed {
   text-decoration: line-through;
   color: #999;
 }
+/* Overlay latar belakang hitam transparan */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999; /* pastikan di atas elemen lain */
+}
+
+/* Kotak modal */
+.modal-box {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Tombol di modal */
+.modal-box button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #1f8a70;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-box button:hover {
+  background-color: #156e5b;
+}
+
