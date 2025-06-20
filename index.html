@@ -30,10 +30,11 @@
   <div class="timer" id="timer"></div>
 
   <div class="buttons">
-    <button onclick="startTimer()" id="btn-mulai" class="active">Mulai</button>
-    <button onclick="pauseTimer()" id="btn-pause">Pause</button>
+    <button onclick="startTimer()" id="btn-mulai">Mulai</button>
     <button onclick="resetTimer()" id="btn-reset">Reset</button>
   </div>
+
+  <button id="settingsBtn">⚙️ Settings</button>
 
   <div class="status" id="status">Siap mulai</div>
   <div class="checkmarks" id="checkmarks"></div>
@@ -51,7 +52,18 @@
   </div>
 </div>
 
-
+<!-- MODAL OVERLAY -->
+  <div id="modalOverlay" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <h3>Atur Durasi Timer</h3>
+      <label>Pomodoro (menit): <input type="number" id="pomodoroInput" value="25" min="1"></label><br>
+      <label>Short Break (menit): <input type="number" id="shortInput" value="5" min="1"></label><br>
+      <label>Long Break (menit): <input type="number" id="longInput" value="15" min="1"></label><br><br>
+      <button id="saveSettings">Simpan</button>
+      <button id="closeSettings">Tutup</button>
+    </div>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html> 
