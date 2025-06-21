@@ -180,10 +180,11 @@ Untuk langkah penggunaan program kami adalah :
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
 #### Tampilan program
-<img src="img-resources/program.png" width="600" height="250">
+<img src="img-resources/program.png" width="600" >
+<img src="img-resources/setting-timer.png" width="600" >
 
 #### Diagram alir kode program ini adalah sebagai berikut :
-<img src="img-resources/flowchartprogram.png" width="600" height="230">
+<img src="img-resources/flowchartprogram.png" width="600" >
 
 
 ## Kesimpulan
