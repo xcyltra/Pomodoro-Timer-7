@@ -165,9 +165,9 @@ Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan
 Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. 
 
 ### Diagram alir untuk program ini adalah sebagai berikut :
-<img src="img-resources/flowchart1.png" width="600" height="220"> 
+<img src="images/flowchart1.png" width="600" height="220"> 
 
-<img src="img-resources/flowchart2.png" width="600" height="220"> 
+<img src="images/flowchart2.png" width="600" height="220"> 
 Untuk langkah penggunaan program kami adalah :
 
 <br>1. Buka program dan tampilan awal akan masuk ketampilan dengan menu `pomodoro` 
@@ -180,11 +180,11 @@ Untuk langkah penggunaan program kami adalah :
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
 #### Tampilan program
-<img src="img-resources/program.png" width="600" >
-<img src="img-resources/setting-timer.png" width="600" >
+<img src="images/program.png" width="600" >
+<img src="images/setting-timer.png" width="600" >
 
 #### Diagram alir kode program ini adalah sebagai berikut :
-<img src="img-resources/flowchartprogram.png" width="600" >
+<img src="images/flowchartprogram.png" width="600" >
 
 
 ## Kesimpulan
