@@ -192,7 +192,7 @@ button:hover {
   max-width: 400px;
   width: 90%;
   text-align: center;
- 
+  font-size: large;
 }
 
 /* Tombol di modal */
@@ -211,3 +211,17 @@ button:hover {
   background-color: #156e5b;
 }
 
+#pomodoroInput {
+  font-size: medium;
+  padding: 2px;
+}
+
+#shortInput {
+  font-size: medium;
+  padding: 2px;
+}
+
+#longInput {
+  font-size: medium;
+  padding: 2px;
+}
