@@ -7,7 +7,7 @@
 
 
 ## Pendahuluan
-Teknik Pomodoro adalah metode manajemen waktu yang dikembangkan oleh Francesco Cirillo pada akhir tahun 1980-an.[1] Teknik ini menggunakan pengatur waktu dapur untuk membagi pekerjaan ke dalam beberapa interval, biasanya 25 menit, yang dipisahkan oleh waktu istirahat singkat. Setiap interval dikenal sebagai pomodoro, dari bahasa Italia yang berarti tomat, sesuai dengan pengatur waktu dapur berbentuk tomat yang digunakan Cirillo saat menjadi mahasiswa.<a href> <a href="#div_ref1">(Cirillo, 2023)</a>. Dengan memecah pekerjaan menjadi bagian-bagian kecil dan diselingi istirahat seseorang dapat lebih fokus dan memiliki rasa pencapaian yang lebih cepat terhadap progres kerja mereka. Oleh karena itu, penerapan teknik ini dalam bentuk aplikasi digital seperti Pomodoro Timer sangat relevan untuk mendukung produktivitas di era modern.
+Teknik Pomodoro adalah metode manajemen waktu yang dikembangkan oleh Francesco Cirillo pada akhir tahun 1980-an. Teknik ini menggunakan pengatur waktu dapur untuk membagi pekerjaan ke dalam beberapa interval, biasanya 25 menit, yang dipisahkan oleh waktu istirahat singkat. Setiap interval dikenal sebagai pomodoro, dari bahasa Italia yang berarti tomat, sesuai dengan pengatur waktu dapur berbentuk tomat yang digunakan Cirillo saat menjadi mahasiswa.<a href> <a href="#div_ref1">(Cirillo, 2023)</a>. Dengan memecah pekerjaan menjadi bagian-bagian kecil dan diselingi istirahat seseorang dapat lebih fokus dan memiliki rasa pencapaian yang lebih cepat terhadap progres kerja mereka. Oleh karena itu, penerapan teknik ini dalam bentuk aplikasi digital seperti Pomodoro Timer sangat relevan untuk mendukung produktivitas di era modern.
 
 Dengan latar belakang tersebut kami mengembangkan sebuah aplikasi Pomodoro Timer berbasis web menggunakan HTML, CSS, dan JavaScript. Tujuan kami membuat pomodoro timer ini adalah membuat alat bantu produktivitas yang mudah digunakan, menarik secara visual dan dapat digunakan secara offline tanpa perlu koneksi internet.
 
@@ -24,10 +24,12 @@ Aplikasi Pomodoro Timer sudah banyak dikembangkan oleh berbagai pihak, baik dala
 ## Metode Pembuatan
 Dalam program ini kami menggunakan bahasa pemrograman JavaScript untuk membuat logika utama dari timer Pomodoro. Kami juga menggunakan HTML sebagai kerangka struktur halaman dan CSS untuk memperindah tampilan antarmuka pengguna agar lebih menarik dan mudah digunakan.Selama untuk mengembangkan web Pomodoro ini langkah pertama yang kami lakukan adalah menetapkan fitur-fitur yang akan disediakan dalam program berupa :
 - Timer Pomodoro dengan tiga mode Pomodoro (25 menit), Short Break (5 menit), dan Long Break (15 menit).
-- Tombol Mulai, Pause, dan Reset berfungsi untuk mengelola alur waktu.
+- Menu setting yang berfungsi untuk mengubah waktu timer dari masing-masing mode
+- Tombol Mulai dan Reset berfungsi untuk mengelola alur waktu.
 - Checkmarks otomatis yang menampilkan tanda centang setelah sesi kerja selesai.
 - Task list berfungsi untuk mencatat dan memantau tugas yang ingin diselesaikan pengguna.
-- Mode loop yang memungkinkan pengulangan otomatis antara kerja dan istirahat.\
+- Mode loop yang memungkinkan pengulangan otomatis antara kerja dan istirahat.
+
 ### Penjelasan terkait kode JavaScript yang digunakan dalam program :
 1. Menentukan waktu untuk setiap mode
 
@@ -178,7 +180,7 @@ Untuk langkah penggunaan program kami adalah :
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
 #### Tampilan program
-<img src="img-resources/program.png" width="600" height="300">
+<img src="img-resources/program.png" width="600" height="250">
 
 
 
@@ -196,7 +198,6 @@ Untuk langkah penggunaan program kami adalah :
 #### Kelebihan dari program yang telah kami buat diantaranya :
 - Dapat digunakan secara offline
 - Mendukung mode kerja berulang (loop otomatis)
-- Desain antarmuka yang sederhana namun fungsional
 #### Rencana kami jika program dilanjutkan adalah :
 - Menambahkan notifikasi jika waktu habis
 - Menambahkan fitur history hasil kerja
