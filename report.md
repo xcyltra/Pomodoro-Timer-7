@@ -169,7 +169,8 @@ Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk me
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
 #### Tampilan program
-<img src="img-resources/program.png" width="600" height="250">
+<img src="img-resources/program.png" width="600" >
+<img src="img-resources/setting-timer.png" width="600" >
 
 ### Diagram alir program
 <img src="img-resources/flowchart1.png" width="600" height="220"> 
@@ -184,19 +185,6 @@ Untuk langkah penggunaan program kami adalah :
 <br>5. Pengguna dapat memulai sesi produktif dengan menekan tombol `mulai` pada menu yang telah disediakan
 <br>6. Pengguna dapat mencentang menu `loop otomatis` jika ingin melakukan sesi Pomodoro > Short break > Long Break secara berurutan tanpa perlu menekan tombol mulai secara manual
 
-
-<<<<<<< HEAD
-=======
-### Tampilan saat program dijalankan adalah sebagai berikut :
-#### Tampilan program
-<img src="img-resources/program.png" width="600" >
-<img src="img-resources/setting-timer.png" width="600" >
-
-#### Diagram alir kode program ini adalah sebagai berikut :
-<img src="img-resources/flowchartprogram.png" width="600" >
-
-
->>>>>>> 227f2bb7331ef5225399d049109c10f179b2a479
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
 - Membagi jobdesk anggota tim
