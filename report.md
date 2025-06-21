@@ -163,20 +163,24 @@ Hasil dari program yang kami buat memiliki beberapa fitur yang diimplementasikan
 Selain itu program ini juga memiliki metode `checkmarks` yang berfungsi untuk menambahkan ✔ secara otomatis untuk tiap sesi pomodoro yang selesai dijalankan. Sedangkan `task list` dalam program ini berfungsi sebagai tempat bagi pengguna untuk menambahkan daftar tugas yang ingin mereka kerjakan, list tugas yang telah ditambahkan dapat diberi tanda ✔ jika telah selesai dikerjakan dan juga dapat dihapus dengan menekan tombol ❌ jika diinginkan. 
 
 ### Diagram alir untuk program ini adalah sebagai berikut :
-<img src="img-resources/flowchart.png" height="250"> 
+<img src="img-resources/flowchart1.png"> 
+
+<img src="img-resources/flowchart2.png"> 
+Untuk langkah penggunaan program kami adalah :
+
+<br>1. Buka program dan tampilan awal akan masuk ketampilan dengan menu `pomodoro` 
+<br>2. Selanjutnya pengguna dapat mengatur durasi timer sesuai dengan yang diinginkan pada menu `settings` 
+<br>3. Pengguna dapat menambahkan `daftar tugas` yang ingin dikerjakan pada menu `task list` 
+<br>4. pengguna dapat menekan tombol `centang` jika tugas telah terselesaikan dan bisa menekan tanda `X` jika ingin menghapus dari list
+<br>5. Pengguna dapat memulai sesi produktif dengan menekan tombol `mulai` pada menu yang telah disediakan
+<br>6. Pengguna dapat mencentang menu `loop otomatis` jika ingin melakukan sesi Pomodoro > Short break > Long Break secara berurutan tanpa perlu menekan tombol mulai secara manual
+
 
 ### Tampilan saat program dijalankan adalah sebagai berikut :
-#### 1) Tampilan Menu Pomodoro
-<img src="img-resources/pomodoro.png" width="700" height="400">
+#### Tampilan program
+<img src="img-resources/program.png" width="600" height="300">
 
-#### 2) Tampilan Menu Short Break
-<img src="img-resources/short_break.png" width="700" height="400">
 
-#### 3) Tampilan Menu Long Break
-<img src="img-resources/long_break.png" width="700" height="400">
-
-#### 4) Tampilan Task List
-<img src="img-resources/task_list.png" width="700" height="400">
 
 ## Kesimpulan
 #### Pembuatan aplikasi pomodoro timer ini membeikan kami beberapa pengalaman sebagai berikut :
